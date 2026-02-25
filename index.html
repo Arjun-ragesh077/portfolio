@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom, #001f4d, #000);
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.site-name {
+  color: #00bfff;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #00bfff;
+  transform: scale(1.1);
+}
+
+/* Hero */
+#hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #00bfff;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.hero-photo:hover {
+  transform: scale(1.1);
+  border-color: #0080ff;
+}
+
+#hero h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+#hero p {
+  font-size: 18px;
+  color: #ccc;
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #00bfff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skill h3 {
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.skill-bar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 25px;
+}
+
+.skill-level {
+  height: 100%;
+  width: 0;
+  background: #00bfff;
+  border-radius: 10px;
+  transition: width 1.2s ease;
+}
+
+.html-level { width: 90%; }
+.css-level { width: 85%; }
+.js-level { width: 75%; }
+
+/* Certificates */
+.certificate-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.certificate-gallery img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.certificate-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 191, 255, 0.5);
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  background-color: #00bfff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0080ff;
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <h1 class="site-name">ABRAHAM PAUL H.</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="hero-content">
+    <img src="myphoto.jpg" alt="My Photo" class="hero-photo">
+    <h1>Hi, I'm ABRAHAM PAUL H.</h1>
+    <p>Welcome to my portfolio</p>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a passionate web developer with expertise in creating responsive and user-friendly websites.</p>
+</section>
+
+<section id="skills">
+  <h2>My Skills</h2>
+  <div class="skills-container">
+    <div class="skill">
+      <h3>HTML</h3>
+      <div class="skill-bar"><div class="skill-level html-level"></div></div>
+    </div>
+    <div class="skill">
+      <h3>CSS</h3>
+      <div class="skill-bar"><div class="skill-level css-level"></div></div>
+    </div>
+    <div class="skill">
+      <h3>JavaScript</h3>
+      <div class="skill-bar"><div class="skill-level js-level"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="certificate-gallery">
+    <img src="certificate1.jpg" alt="Certificate 1">
+    <img src="certificate2.jpg" alt="Certificate 2">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 ABRAHAM PAUL H. All rights reserved.</p>
+</footer>
+
+<script>
+// Fade-in sections
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(section => observer.observe(section));
+
+// Smooth scroll
+const navLinks = document.querySelectorAll("header nav ul li a");
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+  });
+});
+</script>
+
+</body>
+</html>
